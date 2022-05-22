@@ -28,7 +28,7 @@ def get_shop_list_by_dishes(cook_book, dishes, person_count):
             measure['measure'] = ingredient['measure']
             measure['quantity'] = int(ingredient['quantity']) * person_count
             if ingredient['ingredient_name'] in shop_list:
-                shop_list[ingredient['ingredient_name']]['quantity'] = shop_list[ingredient['ingredient_name']]['quantity'] + measure['quantity']
+                shop_list[ingredient['ingredient_name']]['quantity'] += measure['quantity']
             else:
                 shop_list[ingredient['ingredient_name']] = measure
     return shop_list
