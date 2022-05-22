@@ -1,11 +1,8 @@
 from pprint import pprint
 
-
-PATH = "C:/Users/Evil COre/PycharmProjects/NetologyHomeWorks/Receipts.txt"
-
-
+# Задача 1
 def read_file_receipts():
-    with open(PATH, 'r', encoding='UTF-8') as receipts:
+    with open('Receipts.txt', 'r', encoding='UTF-8') as receipts:
         cook_book = {}
         for receipt in receipts:
             dish = receipt.strip()
@@ -22,7 +19,7 @@ def read_file_receipts():
             receipts.readline()
         return cook_book
 
-
+# Задача 2
 def get_shop_list_by_dishes(cook_book, dishes, person_count):
     shop_list = {}
     for dish in dishes:
