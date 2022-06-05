@@ -21,5 +21,5 @@ if __name__ == '__main__':
         'tagged': 'Python',
         'filter': 'default'
     }
-    url = 'https://api.stackexchange.com/2.3/questions#fromdate=2022-06-02&todate=2022-06-05&order=desc&sort=activity&tagged=Python&filter=default&site=stackoverflow'
+    url = 'https://api.stackexchange.com/2.3/questions'
     pprint(StackQuestion.questions(StackQuestion, url, params))
