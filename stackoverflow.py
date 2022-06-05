@@ -5,8 +5,8 @@ from pprint import pprint
 class StackQuestion:
     def questions(self, url, params):
         results = {}
-        res = requests.get(url=url, params=params).json()
-        for item in res['items']:
+        response = requests.get(url=url, params=params).json()
+        for item in response['items']:
             results[item['title']] = item['link']
         return results
 
@@ -14,8 +14,7 @@ class StackQuestion:
 if __name__ == '__main__':
     params = {
         'site': 'stackoverflow',
-        'fromdate': '2022-06-02',
-        'todate': '2022-06-05',
+        'fromdate': '2022-06-03',
         'order': 'desc',
         'sort': 'activity',
         'tagged': 'Python',
