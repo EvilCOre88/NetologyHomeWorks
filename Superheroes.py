@@ -6,7 +6,7 @@ class Superheroes:
         with open('token.txt', 'r') as token_file:
             self.token = token_file.read().strip()
 
-    def superhero(self, name):
+    def _superhero(self, name):
         url = f'https://superheroapi.com/api/{self.token}/search/{name}'
         res = requests.get(url)
         return res
@@ -14,7 +14,7 @@ class Superheroes:
     def superheroes_intelligence(self, names_of_superheroes):
         superheroes_intelligence = {}
         for name in names_of_superheroes:
-            superheroes_intelligence[name] = self.superhero(name).json()['results'][0]['powerstats']['intelligence']
+            superheroes_intelligence[name] = self._superhero(name).json()['results'][0]['powerstats']['intelligence']
         return superheroes_intelligence
 
     def highest_intelligence(self):
