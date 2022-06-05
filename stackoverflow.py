@@ -22,4 +22,5 @@ if __name__ == '__main__':
         'filter': 'default'
     }
     url = 'https://api.stackexchange.com/2.3/questions'
-    pprint(StackQuestion.questions(StackQuestion, url, params))
+    sq = StackQuestion().questions(url, params)
+    pprint(sq)
